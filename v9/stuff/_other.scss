@@ -136,10 +136,10 @@ button, input, textarea, .item-3XjbnG:not([class^=tabBarItem-]), .menu-1QACrS { 
     top: 82px;
 
     &::before {
-      content: ""; position: absolute;
-      bottom: 100px; left: 50px;
+      content: "NO CONNECTION"; position: absolute;
+      bottom: 80px; left: 50px;
       width: 200px; height: 200px;
-      background: url("https://i.imgur.com/dCd49s0.gif") center/80% no-repeat;
+      background: url("https://media.discordapp.net/attachments/942268861321982003/948986614871384124/basil_sprite.png") center/100% no-repeat;
     }
   }
 }

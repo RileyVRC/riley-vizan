@@ -2,19 +2,179 @@
 @import url("https://discordstyles.github.io/SoftX/RadialGlow.css"); //credits: PhoenixAceVFX & OMORI/TwoTrick
 //Sidebar Text
 .container-1eFtFS::after {
-  content: "OMORI V2"; position: fixed;
-  top: 150px; bottom:805px; right: 60px; z-index: -2; //text background control - this will also control where the text goes!
+  content: "OMORI V3"; position: absolute; //the text itself, u can change it to whatever, but the manifest is off limits unless ur forking off us
+  top: 57px; bottom:875px; right: 60px; z-index: -2; //this controls the actual container for the version panel
   text-align: center; display: flex; align-items: center;
-  justify-content: center; font-size: 28px; color: var(--panel-text); //outlining is disabled on discord's end, so no better text, too bad! - OMORI
-  border-radius: var(--border-radius);
+  justify-content: center; font-size: 28px; color: var(--panel-text); //no outlining for you because fuck discord! - OMORI
+  border-radius: var(--border-radius3); //control with border-radius vars located at line 258
   overflow: hidden;
 }
 
+//below here is source code
 :root .app-2CXKsg::before { background: transparent center/90% no-repeat;}
 
 :root .app-3xd6d0::before, :root .app-3xd6d0::after { display: none;}
 
 :root { //i imported this with my bare hands! - OMORI
+
+    // Thread container
+    .threadSidebar-1o3BTy {
+        position: fixed;
+        top: 220px; bottom: 85px; right: 60px;
+        width: 320px; min-width: unset;
+        border-radius: var(--border-radius);
+        background-color: var(--background-primary);
+        padding-bottom: 26px; overflow: visible;
+    
+        &::-webkit-scrollbar { margin-right: 50px;}
+    
+        // Header
+        &::before {
+            content: "Thread"; position: absolute;
+            top: -60px; z-index: 1;
+            width: 100%; height: 60px;
+            display: flex;
+            align-items: center; justify-content: center;
+            font-size: 20px; font-weight: bolder;
+            color: var(--header-primary);
+            background-color: var(--background-secondary);
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
+        }
+    
+        // Footer
+        &::after {
+            content: ""; position: fixed;
+            bottom: 85px; z-index: 1;
+            width: 320px; height: 35px;
+            background-color: var(--background-secondary);
+            border-radius: 0 0 var(--border-radius) var(--border-radius);
+            background-image: linear-gradient(to right, var(--header-primary) 33%, rgba(255,255,255,0) 0%);
+            background-position: top;
+            background-size: 21px 2px;
+            background-repeat: repeat-x;
+        }
+    }
+    
+    
+    // Embed
+    .embedFull-1HGV2S { 
+        border: none; margin-left: 10px;
+        border-radius: 5px var(--border-radius) var(--border-radius) 5px;
+    
+        &:after {
+            content: "";
+            position: absolute;
+            top: 1px; bottom: 1px; left: -10px;
+            width: 0px;
+            border: solid;
+            border-width: 0 0 0 6px;
+            border-color: inherit;
+            border-radius: var(--border-radius);
+        }
+    }
+    
+    // Code blocks
+    .hljs { border: none; border-radius: var(--border-radius4);}
+    
+    // Audio player
+    .wrapperAudio-1Bzv_Z { padding: 10px 0 0 0; border-radius: var(--border-radius4);}
+    .audioMetadata-1Hrt8T { padding: 5px 10px;}
+    .audioControls-3fmemK { border-radius: 0 0 var(--border-radius4) var(--border-radius4);}
+    
+    // Spoiler
+    .spoilerText-27bIiA.hidden-3B-Rum, .spoilerText-27bIiA.hidden-3B-Rum:hover { background-color: var(--null2);}
+    
+    // Discord invite
+    .wrapper-1HIH0j { border-radius: var(--border-radius);}
+    
+    // Spotify session
+    .invite-3uuHYQ { background-color: var(--background-secondary); border: none; border-radius: var(--border-radius);}
+    
+    // Spotify embed
+    .embedSpotify-1rDvOE { border-radius: var(--border-radiusnull);}
+    
+    // Discord Gift
+    .tile-2mmK5T { background-color: var(--background-secondary); border-radius: var(--border-radius);}
+    .tileHorizontal-1DBMDZ.tile-2mmK5T:hover { background-color: var(--background-secondary-alt);}
+    .invalidPoop--w1123 { background-color: rgba(0, 0, 0, 0.103);}
+    
+    // # @ / autocomplete menu
+    .autocomplete-3NRXG8, .option-Tt7anD { background-color: var(--mentionsmenu);}
+    .categoryHeader-OpJ1Ly, .selected-3H3-RC { background-color: var(--mentionsmenu);}
+    
+    // @everyone popout
+    .everyonePopout-nEbJY3 { background-color: var(--background-primary); box-shadow: 0 2px 10px 0 rgba(0,0,0,.2), 0 0 0 1px rgba(56, 31, 31, 0.11);}
+    
+    // Emoji picker
+    .emojiItem-277VFM.emojiItemSelected-2Lg50V { background-color: var(--background-modifier-selected);}
+    .searchBar-2M9mRP { border-radius: var(--border-radius);}
+    
+    .imageLoading-2uloYN { 
+        background-image: none !important;
+        background-color: var(--background-primary);
+        border-radius: 8px;
+    }
+    
+    // Reactions modal
+    .scroller-2GkvCq { background: var(--background-tertiary);}
+    .container-KM8BU6, .reactors-1VXca7 { background: var(--background-secondary);}
+    .reactionSelected-1aMb2K { background-color: #6e85d321;}
+    .reactorDefault-3GSyaV { box-shadow: inset 0 -1px 0 var(--background-primary);}
+    
+    // Deleting message modal
+    .message-G6O-Wv { background: var(--background-primary); box-shadow: 0 2px 10px 0 rgba(0,0,0,.2), 0 0 0 1px rgba(56, 31, 31, 0.11);}
+    
+    // Attachements
+    .textContainer-36wgKK, .footer-GXWBBp { border: none;}
+    
+    // Emoji popout
+    .popoutContainer-2wbmiM { border-radius: var(--border-radius);}
+    
+    // New message bar
+    .newMessagesBar-1hF-9G {  
+        top: 7px; border-radius: var(--border-radius2);
+        background-color: var(--newmsgcolor);
+        padding-top: 0;
+    }
+    
+    // Jump to present bar
+    .jumpToPresentBar-1cEnH0 { 
+        bottom: 15px; padding-bottom: 0;
+        background-color: var(--returntozero);
+        border-radius: var(--border-radius2);
+    }
+    
+    // News chat bar
+    .wrapper-2SplAX { border-radius: var(--border-radius);}
+    
+    // Reactions
+    .reaction-2A2y9y { border-radius: var(--border-radius);}
+    
+    // Buttons on messages
+    .wrapper-2vIMkT { border-radius: var(--border-radius);}
+    
+    // Bot tag
+    .botTagRegular-kpctgU { background-color: var(--background-accent);}
+    
+    }
+
+    .ready-3BZNWT { 
+        display: none;
+      
+        & + .text-2bYgPB {
+          top: 82px;
+      
+          &::before {
+            content: "NO CONNECTION"; position: absolute;
+            bottom: 80px; left: 50px;
+            width: 200px; height: 200px;
+            background: url("https://media.discordapp.net/attachments/942268861321982003/948986614871384124/basil_sprite.png") center/100% no-repeat;
+          }
+        }
+      }
+      
+
+    :root { //i imported this with my bare hands! - OMORI
     .guilds-2JjMmN .scroller-3X7KbA { 
         padding: 8px 0 130px 0;
 
@@ -42,82 +202,289 @@
             
         // Top
         &::before {
-            content: "Member list"; position: absolute;
+            content: "Member List"; position: absolute;
             top: -60px; z-index: 1;
             width: 100%; height: 60px;
             display: flex;
             align-items: center; justify-content: center;
-            font-size: 20px; font-weight: bolder;
+            font-size: 20px;
             color: var(--header-primary);
-            background-color: var(--background-secondary);
+            background-color: var(--memberlist-color);
             border-radius: var(--border-radius3) var(--border-radius3) 0 0;
         }
     
+
         .members-3WRCEx { 
             width: 100%; 
-            background-color: var(--background-primary);
+            background-color: var(--memberlist-color);
             
-            .content-2a4AW9 { min-height: 1000px; background-color: transparent;}
+            .content-2a4AW9 { min-height: 1000px;;}
             .member-2gU6Ar { 
                 max-width: 300px; 
-                border-radius: var(--border-radius2);
-                background-color: var(--background-primary);
+                border-radius: var(--border-radius);
+                background-color: var(--null);
             }
         }
         
         // Bottom
         &::after {
-            content: ""; position: absolute;
+            content: "STAGING"; position: absolute;
             bottom: -35px; z-index: 1;
             width: 100%; height: 35px;
-            background-color: var(--background-secondary);
+            display: flex;
+            align-items: center; justify-content: center;
+            font-size: 14px;
+            color: white;
+            background-color: var(--memberlist-color);
             border-radius: 0 0 var(--border-radius3) var(--border-radius3);
-            background-image: linear-gradient(to right, var(--header-primary) 33%, rgba(255,255,255,0) 0%);
-            background-position: top;
-            background-size: 21px 2px;
-            background-repeat: repeat-x;
         }
     }
 }
-:root .app-2CXKsg::after { 
-    background: transparent;
-    background-size: 91%;
-}
-
-:root .layers-OrUESM::after { 
-    background: transparent;
-    background-size: 97%;
-}
-
-:root .layers-OrUESM::before {
-    background: transparent;
-    background-size: 100%;
-    right: -3px;
-}
-
-:root .bg-1QIAus::after { 
-    background: transparent;
-    background-size: 92%;
-}
-
-:root .bg-1QIAus::before { 
-    background: transparent;
-    background-size: 100%;
-}
 :root {
+
+    .userPopout-2j1gM4 {
+        display: grid; 
+        grid-template-areas: "avatar user-infos body" 
+                             "banner banner body";
+        grid-template-columns: 120px 1fr 1fr;
+        grid-template-rows: 120px 1fr;
+        width: unset !important; max-width: 600px;
+        min-height: 300px; padding: 8px;
+        border-radius: var(--border-radius);
+        box-shadow: 0 2px 10px 0 rgba(0,0,0,.2), 0 0 0 1px rgba(56, 31, 31, 0.11);
+    
+        // Banner
+        .headerNormal-3Zn_yu { //testing
+            grid-area: banner;
+            position: static;
+            width: 100%; height: calc(100% - 8px);
+            margin: 8px 0 0;
+    
+            .banner-1YaD3N { 
+                width: 100%; height: 100%;
+                border-radius: var(--border-radius);
+            }
+        }
+    
+        // User informations header
+        .headerTop-3GPUSF {
+            grid-area: user-infos;
+            position: static; display: flex;
+            flex-direction: column-reverse;
+            align-items: center; justify-content: flex-end;
+            padding: 0; margin-left: 8px;
+            background-color: var(--background-secondary-alt);
+            border-radius: var(--border-radius);
+    
+            // Badges
+            .profileBadges-2pItdR {
+                position: static;
+                width: calc(100% - 16px); height: 100%; 
+                max-width: unset;
+                align-items: center; justify-content: center;
+                padding: 10px; margin: 0;
+    
+                .profileBadge22-3GAYRy { width: 30px; height: 30px;}
+            }
+    
+            // Username
+            .headerText-1-WmDq {
+                display: flex; flex-direction: column;
+                width: calc(100% - 12px); height: calc(100% - 12px);
+                align-items: center; justify-content: center;
+                padding: 6px;
+                background-color: var(--background-primary);
+    
+                .headerTag-3GXZkV, .nickname-t08Mck { font-size: 16px;}
+            }
+    
+            .setIdentityLink-hOFsMl { display: none;}
+        }
+    
+        // Body
+        .body-2wLx-E {
+            grid-area: body; padding: 0 !important;
+            
+            // Custom status
+            .customStatus-3XAoF9 {
+                position: relative; overflow: hidden;
+                width: calc(100% - 8px);
+                margin: 0 0 8px 8px; padding: 36px 8px 8px 8px;
+                background-color: var(--background-secondary-alt);
+                border-radius: var(--border-radius);
+    
+                &::before {
+                    content: "STATUS"; position: absolute;
+                    top: 0; left: 0;
+                    width: calc(100% - 10px);
+                    font-size: 12px; font-weight: 600; 
+                    text-align: center; color: var(--header-secondary);
+                    background-color: var(--background-primary);
+                    padding: 5px;
+                }
+            }
+    
+            // Divider
+            .divider-1wtgZ3 { display: none;}
+    
+            // About Me
+            .aboutMeSection-PUghFQ {
+                margin: 0 0 8px 8px; padding: 0 0 8px 0;
+                background-color: var(--background-secondary-alt);
+                border-radius: var(--border-radius);
+    
+                .aboutMeTitle-3pjiS7 {
+                    justify-content: center;
+                    background-color: var(--background-primary);
+                    padding: 5px; border-radius: var(--border-radius) var(--border-radius) 0 0;
+                }
+    
+                .aboutMeBody-1J8rhz { 
+                    padding: 0 12px;
+    
+                    // Sarahhh#6076's code
+                    -webkit-line-clamp: 190;
+                    max-height: 112px;
+                    overflow-x: hidden; overflow-y: scroll;
+    
+                    &::-webkit-scrollbar {
+                        width: 10px; height: 15px;
+    
+                        &-track {
+                            border-radius: 10px;
+                            background-color: var(--background-secondary-alt);
+                        }
+    
+                        &-thumb {
+                            border-radius: 10px;
+                            background: var(--background-tertiary);
+                        }
+                    }
+                }
+            }
+    
+            .bodyInnerWrapper-2bQs1k {
+                padding-left: 8px;
+    
+                // Activity
+                .activity-1gTu-L { 
+                    background-color: var(--background-secondary-alt);
+                    padding-bottom: 8px; margin-bottom: 8px;
+                    border-radius: var(--border-radius);
+    
+                    .headerTextNormal-Z8we9g {
+                        width: 100%;
+                        text-align: center;
+                        justify-content: center;
+                        background-color: var(--background-primary);
+                        padding: 5px; border-radius: var(--border-radius) var(--border-radius) 0 0;
+                    }
+    
+                    .bodyNormal-250CQK {
+                        padding: 8px;
+    
+                        & + div {
+                            margin-top: 0;
+                            padding: 0 8px;
+    
+                            button { padding: 2px 8px;}
+                        }
+                    }
+    
+                        // Spotify icon
+                    .spotifyIcon-2J9kSv { display: none;}
+                }
+        
+                // Roles
+                .bodyTitle-2Az3VQ {
+                    text-align: center;
+                    background-color: var(--background-primary);
+                    padding: 5px; margin-bottom: 0;
+                    border-radius: var(--border-radius) var(--border-radius) 0 0;
+                }
+    
+                .rolesList-3uZoaa {
+                    flex-direction: column;
+                    margin: 0 0 8px 0; border-radius: 0 0 var(--border-radius) var(--border-radius);
+                    background-color: var(--background-secondary-alt);
+                    
+                    .role-2TIOKu {
+                        position: relative;
+                        overflow: hidden;
+                        border: none;
+                        margin: 4px 4px 0 4px;
+                        border-radius: var(--border-radius);
+    
+                        &:last-child { margin-bottom: 8px;}
+                        &:empty { padding: 50px 0;}
+                    }
+    
+                    .roleCircle-1EgnFN::before {
+                        content: '';
+                        position: absolute;
+                        top: 0; left: 0;
+                        width: 100%; height: 100%;
+                        background: inherit;
+                        opacity: .2;
+                        pointer-events: none;
+                    }
+                    .roleCircle-1EgnFN { margin: 0;}
+    
+                    .roleName-2ZJJYR { 
+                        z-index: 1;
+                        text-align: center; 
+                        width: 100%; font-weight: bold;
+                        margin: 0 0 0 4px;
+                    }
+                }
+    
+                // Notes
+                .note-Go5ZP2 {
+                    margin: 0; border-radius: 0 0 var(--border-radius) var(--border-radius);
+                    background-color: var(--background-secondary-alt);
+    
+                    textarea:focus { background-color: transparent;}
+                }
+            }
+    
+            &::-webkit-scrollbar { display: none;}
+        }
+    
+        // Avatar
+        .avatarWrapperNormal-ahVUaC {
+            grid-area: avatar;
+            position: relative;
+            top: 0; left: 0;
+    
+            .avatar-2Vndt_ { 
+                border: none; background: none;
+                width: 150px !important; height: 105px !important;
+                
+                foreignObject { mask: none; border-radius: var(--border-radius); overflow: hidden;}
+                .pointerEvents-9SZWKj { display: none;}
+            }
+            .avatarHint-k7pYop { 
+                top: 0; left: 0;
+                width: 100%; height: 100%;
+    
+                foreignObject { mask: none; border-radius: var(--border-radius); overflow: hidden;}
+            }
+        }
+    
+        .footer-3naVBw { display: none;}
+    }
 
 // --- User variables ---
 
-// Jumping GIF
---jumping-gif: transparent;
-
 //the background for the theme, paste **an image that only shows the image itself and nothing else**
---background-tertiary-alt: url("https://media.discordapp.net/attachments/942268861321982003/942940069004738630/discord_bg_v3.png?width=1246&height=701"); //back this up to a different image hoster, discordapp is not recommended for themes!!
+--background-tertiary-alt: url("https://media.discordapp.net/attachments/942268861321982003/948985815390879824/discord_bg_v5.png?width=1246&height=701"); //back this up to a different image hoster, discordapp is not recommended for themes!!
 
 // border radius vars
 --border-radius: 7px; //main radius control - this may break the look of some stuff
---border-radius2: 19px; //server icon radius
+--border-radius2: 22px; //server icon radius
 --border-radius3: 30px; //testing
+--border-radiusnull: 0px; //no border radius
+--border-radius4: 3px; //low border
 
 &.theme-dark {
 
@@ -135,23 +502,55 @@
     --interactive-hover: #dddddd; //hover colors
     --interactive-active: #dadada; //arned colors
 
-    // Background color
-    --background-primary: #1d1d1da8;
-    --background-secondary: #1d1d1da8;
-    --background-secondary-alt: #1d1d1da8;
-    --background-tertiary: #1d1d1da8;
-    --background-floating: #3f3f3fcc;
-    --background-accent: #8b8b8bb7;
-    --scrollbar-color: #00000000; //i don't like scrollbars in discord, they look ugly - OMORI
+    /* these vars down here are pretty nice
+    too bad they're fucking confusing
+    so creating my own vars is going to have to do... */
+    
+    //these are just fallback vars
+    //fallback color pallette
+    --background-primary: #000000c4;
+    --background-secondary: #000000ad;
+    --background-secondary-alt: #000000AA;
+    --background-tertiary: #000000cc;
+    --background-floating: #000000c0;
+    --background-accent: #ffffffaa;
+
+   //WHAT THE FUCK IS THIS
     --activity-card-background: var(--background-secondary-alt);
     --channeltextarea-background: var(--background-secondary);
     --background-modifier-hover: rgba(180, 180, 180, 0.32);
     --background-modifier-active: rgba(31, 31, 31, 0.32);
     --background-modifier-selected: rgba(24, 24, 24, 0.32);
+
+    //WHAT IS THIS ASWELL
     --toast-background: rgb(196, 196, 196) !important;
     --toast-header: #2e2e2ed5 !important;
     --toast-contents: #474747cb !important;
     --toast-border: #444444c0 !important;
+
+    //THESE ARE THE ACTUAL VARS!!!!
+    
+    //create no color
+    --null: #00000000;
+    --null2: #000000;
+    //member list
+    --memberlist-color: #000000b2;
+    --memberlist-color2: #00000000;
+    --memberlist-color3: #000000FF;
+    //chat
+    --chat-windowmain: #00000000;
+    --chat-windowsecond: #00000000;
+    --chat-window: #00000000;
+    //navigation
+    --channel-color: #00000000;
+    --guild-listcolor: #00000000;
+    //misc
+    --newmsgcolor: #3636367a;
+    --returntozero: #00000088;
+    --mentionsmenu: #00000088;
+    --reactioncolor: #00000000;
+
+
 
     // Scrollbar
     --scrollbar-auto-thumb: var(--scrollbar-color); 

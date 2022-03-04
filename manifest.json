@@ -1,9 +1,9 @@
 {
-    "icon": "icon.png",
-    "name": "OMORIVizan",
-    "version": "2",
-    "author": "OMORI#9999",
-    "description": "A lil' project",
+    "icon": "icon.jpg",
+    "name": "OMORIVizan,
+    "version": "v3",
+    "author": "b4sil",
+    "description": "Stable version of OMORIVizan.",
     "license": "DN",
-    "theme": "v9/main.scss"
+    "theme": "v9/Main.scss"
 }
