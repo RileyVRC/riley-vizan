@@ -1,0 +1,9 @@
+{
+    "icon": "icon.jpg",
+    "name": "OMORIVizan",
+    "version": "v3",
+    "author": "b4sil",
+    "description": "Recommended: Vizality",
+    "license": "MIT",
+    "theme": "v9/Main.scss"
+}
