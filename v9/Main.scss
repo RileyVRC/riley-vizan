@@ -6,7 +6,7 @@
   top: 57px; bottom:875px; right: 60px; z-index: -2; //this controls the actual container for the version panel
   text-align: center; display: flex; align-items: center;
   justify-content: center; font-size: 28px; color: var(--panel-text); //no outlining for you because fuck discord! - OMORI
-  border-radius: var(--border-radius3); //control with border-radius vars located at line 258
+  border-radius: var(--border-radius3); //control with border-radius vars located at line 483
   overflow: hidden;
 }
 
